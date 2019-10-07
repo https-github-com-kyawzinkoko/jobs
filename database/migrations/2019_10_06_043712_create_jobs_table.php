@@ -14,20 +14,14 @@ class CreateJobsTable extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->string('type');
-            $table->string('company');
-            $table->string('logo');
-            $table->string('url');
-            $table->string('position');
-            $table->string('location');
-            $table->text('description')->nullable();
-            $table->text('how_to_apply')->nullable();
-            $table->string('token');
-            $table->boolean('public');
-            $table->boolean('activated');
+            $table->increments('id');
+            $table->string('image');
+            $table->string('name');
             $table->string('email');
+            $table->string('phone');
+            $table->string('address');
+            $table->text('description')->nullable();
             $table->dateTime('expries_at');
-            $table->unsignedInteger('category_id');
             $table->timestamps();
         });
     }
